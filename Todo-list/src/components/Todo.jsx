@@ -1,12 +1,12 @@
 import React from 'react'
 
-export default function Todo({task, toggleComplete}) {
+export default function Todo({task, toggleComplete, deleteTodo, editTodo}) {
   return (
-    <div className='todo'>
-      <p onClick={() => toggleComplete(task.id)} className={`${task.completed ? 'completed' : ''}`}>{task.task}</p>
+    <div className='Todo'>
+      <p className={task.completed ? 'completed' : ""} onClick={() => toggleComplete(task.id)}>{task.task}</p>
       <div>
-        <button >edit</button>
-        <button>delete</button>
+        <button onClick={() => editTodo(task.id)}>edit</button>
+        <button onClick={() => deleteTodo(task.id)}>delete</button>
       </div>
     </div>
   )
